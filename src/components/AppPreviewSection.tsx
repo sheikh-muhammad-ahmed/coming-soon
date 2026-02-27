@@ -40,7 +40,7 @@ function BookingScreen() {
       <div className="flex items-center justify-between px-4 pt-10 pb-2">
         <span className="flex items-center gap-1 text-[11px] font-bold text-white">
           <MockLogo />
-          <span className="text-[#e3e53e]">Kheil</span><span className="text-[#9dc4d5]">Kood</span>
+          <span><span className="text-[#e3e53e]">Kheil</span><span className="text-[#9dc4d5]">Kood</span></span>
         </span>
         <span className="text-[9px] text-white/40">9:41</span>
       </div>
@@ -287,7 +287,7 @@ function VenueListingScreen() {
       <div className="flex items-center justify-between px-4 pt-10 pb-2">
         <span className="flex items-center gap-1 text-[11px] font-bold text-white">
           <MockLogo />
-          <span className="text-[#e3e53e]">Kheil</span><span className="text-[#9dc4d5]">Kood</span>
+          <span><span className="text-[#e3e53e]">Kheil</span><span className="text-[#9dc4d5]">Kood</span></span>
         </span>
         <span className="text-[9px] text-white/40">Near You</span>
       </div>
@@ -432,12 +432,12 @@ export default function AppPreviewSection() {
           </p>
         </motion.div>
 
-        {/* Phone grid */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-4 sm:gap-8">
+        {/* Phone grid — horizontal scroll on mobile, grid on sm+ */}
+        <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide sm:grid sm:grid-cols-2 sm:gap-8 sm:overflow-visible sm:pb-0 xl:grid-cols-4">
           {screens.map((screen, i) => (
             <motion.div
               key={screen.id}
-              className="flex flex-col items-center"
+              className="flex min-w-[220px] shrink-0 snap-center flex-col items-center sm:min-w-0 sm:shrink"
               initial={{ opacity: 0, y: 45 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -508,18 +508,15 @@ export default function AppPreviewSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-[#0e0e0e]/70 to-transparent" />
           </div>
-          <div className="relative -mt-20 pb-10 text-center">
-            <p className="mb-6 text-sm text-white/50 md:text-base">
-              Launching soon — be the first to play.
-            </p>
+          <div className="relative -mt-10 pb-10 text-center">
             <motion.a
-            href="#early-access"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-[#e3e53e] px-10 py-4 text-base font-bold text-[#121212] transition-shadow duration-300 hover:shadow-[0_0_40px_rgba(227,229,62,0.35)] sm:text-lg"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Get Early Access
-          </motion.a>
+              href="#early-access"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-[#e3e53e] px-10 py-4 text-base font-bold text-[#121212] transition-shadow duration-300 hover:shadow-[0_0_40px_rgba(227,229,62,0.35)] sm:text-lg"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Get Early Access
+            </motion.a>
           </div>
         </motion.div>
       </div>

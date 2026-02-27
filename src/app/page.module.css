@@ -377,6 +377,10 @@
     order: 2;
   }
 
+  .phoneWrapper {
+    margin-top: 0;
+  }
+
   .subheadline {
     max-width: 520px;
   }
@@ -415,9 +419,9 @@
   }
 
   .phone {
-    width: 240px;
-    height: 500px;
-    border-radius: 38px;
+    width: 220px;
+    height: 460px;
+    border-radius: 36px;
   }
 
   .phoneDynamicIsland {

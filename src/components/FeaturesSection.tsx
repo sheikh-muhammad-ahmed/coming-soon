@@ -7,6 +7,7 @@ import {
   FiCalendar,
   FiShield,
   FiCompass,
+  FiChevronRight,
 } from "react-icons/fi";
 
 const features = [
@@ -48,7 +49,7 @@ export default function FeaturesSection() {
       <div className="mx-auto max-w-7xl px-5 md:px-12">
         {/* Section Header */}
         <motion.div
-          className="mb-14 text-center md:mb-16"
+          className="mb-10 text-center md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -63,14 +64,28 @@ export default function FeaturesSection() {
           <p className="mx-auto mt-4 max-w-md text-base text-white/50 md:text-lg">
             Everything you need to play more, stress less.
           </p>
+
+          {/* Swipe hint — mobile only */}
+          <motion.div
+            className="mt-5 flex items-center justify-center gap-1 sm:hidden"
+            animate={{ x: [0, 6, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <span className="text-xs font-semibold tracking-wide text-[#9dc4d5]">
+              swipe
+            </span>
+            <FiChevronRight size={14} className="text-[#9dc4d5]" />
+            <FiChevronRight size={14} className="text-[#9dc4d5]/50" />
+          </motion.div>
         </motion.div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        {/* Feature Grid — horizontal scroll on mobile, grid on sm+ */}
+        {/* -mx-5 + px-5 pulls the scroll container to full viewport width to prevent right-side clipping */}
+        <div className="-mx-5 flex items-stretch gap-4 overflow-x-auto snap-x snap-mandatory px-5 pb-4 scrollbar-hide sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 xl:grid-cols-5">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 text-center transition-all duration-300 ease-out hover:-translate-y-[5px]"
+              className="group flex w-[78vw] shrink-0 snap-start flex-col rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 text-center transition-all duration-300 ease-out hover:-translate-y-[5px] first:ml-3 last:mr-5 sm:w-auto sm:shrink sm:first:ml-0 sm:last:mr-0"
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

@@ -45,7 +45,7 @@ export default function Home() {
               height={36}
               className={styles.logoIcon}
             />
-            <span className={styles.logoHighlight}>Kheil</span><span className={styles.logoHighlightBlue}>Kood</span>
+            <span><span className={styles.logoHighlight}>Kheil</span><span className={styles.logoHighlightBlue}>Kood</span></span>
           </div>
         </motion.nav>
 
@@ -113,7 +113,7 @@ export default function Home() {
                         height={22}
                         className={styles.mockLogoIcon}
                       />
-                      <span className={styles.mockLogoAccent}>Kheil</span><span className={styles.mockLogoAccentBlue}>Kood</span>
+                      <span><span className={styles.mockLogoAccent}>Kheil</span><span className={styles.mockLogoAccentBlue}>Kood</span></span>
                     </span>
                     <div className={styles.mockAvatar} />
                   </div>

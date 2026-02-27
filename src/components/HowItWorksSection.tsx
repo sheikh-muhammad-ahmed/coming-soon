@@ -56,8 +56,8 @@ export default function HowItWorksSection() {
           </p>
         </motion.div>
 
-        {/* Steps Grid */}
-        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
+        {/* Steps Grid — -mx-6 + px-6 pulls scroll container full-width to prevent scrollbar clipping */}
+        <div className="relative -mx-6 flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
           {/* Connector lines (desktop only) */}
           <div className="pointer-events-none absolute left-0 right-0 top-[72px] z-0 hidden md:block">
             <div className="mx-auto flex max-w-[70%] items-center justify-center">
@@ -69,7 +69,7 @@ export default function HowItWorksSection() {
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              className="group relative z-10 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-7 text-center transition-all duration-300 hover:-translate-y-[5px] md:p-8"
+              className="group relative z-10 w-[78vw] shrink-0 snap-start rounded-2xl border border-white/[0.06] bg-white/[0.03] p-7 text-center transition-all duration-300 hover:-translate-y-[5px] last:mr-6 md:w-auto md:shrink md:last:mr-0 md:p-8"
               style={{
                 boxShadow: "0 0 0 rgba(0,0,0,0)",
               }}
