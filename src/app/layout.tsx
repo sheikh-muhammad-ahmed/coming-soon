@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     "sports app",
     "sports network",
   ],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
